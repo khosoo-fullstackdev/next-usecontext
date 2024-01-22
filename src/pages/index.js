@@ -1,10 +1,5 @@
-import Header from "@/components/Header";
-import Left from "@/components/Left";
-import Right from "@/components/Right";
-
-const data = {
-  question: {},
-};
+import { Header, Left, Right } from "@/components";
+import { useState } from "react";
 
 export default function Home() {
   return (
