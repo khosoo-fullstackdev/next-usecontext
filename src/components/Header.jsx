@@ -1,5 +1,9 @@
 import React from "react";
 
-export function Header() {
-  return <div className={"w-full bg-slate-200 text-blue-600"}>Header</div>;
+export default function Header() {
+  return (
+    <div className={"flex h-10 justify-center bg-slate-200 text-black"}>
+      Header
+    </div>
+  );
 }

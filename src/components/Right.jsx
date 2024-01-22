@@ -1,15 +1,18 @@
 import React from "react";
-import QuestionAnswer from "./QuestionAnswer";
-import SideInfo from "./SideInfo";
-import { useQuestionData } from "@/context/QuestionContext";
+import { useScoreData } from "@/context/ScoreContext";
 
-export function Right() {
-  const { count, setCount } = useQuestionData();
-  console.log(count);
+export default function Right() {
+  const { score, setScore } = useScoreData();
+  function IncrementHandler() {
+    return;
+  }
+  function DecrementHandler() {
+    return;
+  }
   return (
-    <div className="w-3/4 bg-green-300 h-[100vh] flex">
-      <QuestionAnswer />
-      <SideInfo />
+    <div className="w-1/2 bg-green-300 h-[100vh] flex">
+      <button onClick={IncrementHandler}>+</button>
+      <button onClick={DecrementHandler}>-</button>
     </div>
   );
 }
