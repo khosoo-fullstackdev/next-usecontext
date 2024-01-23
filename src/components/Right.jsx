@@ -2,17 +2,38 @@ import React from "react";
 import { useScoreData } from "@/context/ScoreContext";
 
 export default function Right() {
-  const { score, setScore } = useScoreData();
-  function IncrementHandler() {
-    return;
+  const { data, setData } = useScoreData();
+
+  function IncrementHandler(e, i) {
+    const dataNew = [...data];
+    dataNew[i].score++;
+    setData(dataNew);
   }
-  function DecrementHandler() {
-    return;
+
+  function DecrementHandler(e, i) {
+    const dataNew = [...data];
+    dataNew[i].score--;
+    setData(dataNew);
   }
+
   return (
-    <div className="w-1/2 bg-green-300 h-[100vh] flex">
-      <button onClick={IncrementHandler}>+</button>
-      <button onClick={DecrementHandler}>-</button>
+    <div>
+      {data.map((e, index) => (
+        <div className="items-center justify-between bg-green-300">
+          <button
+            className="w-[50px]"
+            onClick={() => IncrementHandler(e, index)}
+          >
+            +
+          </button>
+          <button
+            className="w-[50px]"
+            onClick={() => DecrementHandler(e, index)}
+          >
+            -
+          </button>
+        </div>
+      ))}
     </div>
   );
 }

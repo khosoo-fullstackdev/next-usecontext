@@ -5,10 +5,9 @@ export const useScoreData = () => useContext(ScoreContext);
 
 export function ScoreProvider({ children }) {
   const [data, setData] = useState(players);
-  const [score, setScore] = useState(players);
 
   return (
-    <ScoreContext.Provider value={{ data, setData, score, setScore }}>
+    <ScoreContext.Provider value={{ data, setData }}>
       {children}
     </ScoreContext.Provider>
   );
